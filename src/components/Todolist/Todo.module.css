@@ -1,0 +1,39 @@
+:root{
+    --black : #000;
+    --white : #fff;
+}
+
+.todo{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.todo > .title{
+    text-transform: capitalize;
+    font-size: 25px;
+    margin-bottom: 20px;
+    
+}
+.todo >.title >span{
+    color: tomato;
+}
+
+.btn{
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5px 15px;
+    margin: 0px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: 16px;
+    text-decoration: none;
+}
+.btn> a{
+    color: #fff;
+}
+.btn:active{
+    transform: scale(0.90);
+}

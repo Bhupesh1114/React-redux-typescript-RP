@@ -1,0 +1,19 @@
+
+
+.header{
+    background-color: #000;
+    padding: 20px ;
+}
+
+.links{
+width: 30%;
+margin-left: auto;
+display: flex;
+justify-content: space-around;
+}
+
+.links> a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}

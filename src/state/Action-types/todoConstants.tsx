@@ -1,0 +1,9 @@
+
+// Action Types
+export const TODO_ADD_REQUEST = "TODO_ADD_REQUEST";
+export const TODO_ADD_SUCCESS = "TODO_ADD_SUCCESS";
+export const TODO_ADD_FAIL = "TODO_ADD_FAIL";
+
+export const TODO_DELETE_REQUEST = "TODO_DELETE_REQUEST";
+export const TODO_DELETE_SUCCESS = "TODO_DELETE_SUCCESS";
+export const TODO_DELETE_FAIL = "TODO_DELETE_FAIL";
