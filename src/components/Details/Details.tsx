@@ -8,7 +8,7 @@ import { Container } from '../styled-components/styled-components';
 import styles from './Details.module.css'
 
 const Details = () => {
-    const {allTodos} = useSelector((state: AppState) => state.AddTodoReducer);
+    const {allTodos} = useSelector((state: AppState) => state.GetAllTodos);
     console.log(allTodos);
     const params = useParams();
     console.log(params);

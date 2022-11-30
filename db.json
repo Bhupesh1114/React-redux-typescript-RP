@@ -1,0 +1,40 @@
+{
+  "allTodos": [
+    {
+      "todo": "sdsfd",
+      "id": 1
+    },
+    {
+      "todo": "dafdf",
+      "id": 2
+    },
+    {
+      "todo": "sdsd",
+      "id": 3
+    },
+    {
+      "todo": "one",
+      "id": 4
+    },
+    {
+      "todo": "hjj",
+      "id": 5
+    },
+    {
+      "todo": "64y64",
+      "id": 6
+    },
+    {
+      "todo": "12",
+      "id": 7
+    },
+    {
+      "todo": "23",
+      "id": 8
+    },
+    {
+      "todo": "34",
+      "id": 9
+    }
+  ]
+}

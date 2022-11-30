@@ -7,14 +7,15 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
-import {AddTodoReducer} from "../Reducers/todoReducer";
+import { GetAllTodos} from "../Reducers/todoReducer";
 
 const persistConfig = {
   key: "root",
   storage,
 };
 const rootReducer = combineReducers({
-  AddTodoReducer,
+  GetAllTodos,
+  
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

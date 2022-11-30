@@ -20,20 +20,13 @@
     color: tomato;
 }
 
-.btn{
-    background-color: var(--black);
-    color: var(--white);
-    padding: 5px 15px;
-    margin: 0px 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    font-size: 16px;
-    text-decoration: none;
-}
-.btn> a{
+button:disabled{
+    background-color: gray;
     color: #fff;
+    cursor:not-allowed;
 }
-.btn:active{
-    transform: scale(0.90);
+
+button:disabled:hover{
+    background-color: gray;
 }
+

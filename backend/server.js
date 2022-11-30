@@ -9,6 +9,9 @@ dotenv.config("./env");
 app.get("/", (req,res) => {
     res.status(200).send("Api is running....");
 })
+app.get("/home", (req,res) => {
+    res.status(200).send([{"name" : "Bhupesh"}]);
+})
 
 const PORT = process.env.PORT || 8080;
 
