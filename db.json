@@ -1,40 +1,24 @@
 {
   "allTodos": [
     {
-      "todo": "sdsfd",
+      "todo": "hello",
       "id": 1
     },
     {
-      "todo": "dafdf",
+      "todo": "world",
       "id": 2
     },
     {
-      "todo": "sdsd",
+      "todo": "js",
       "id": 3
     },
     {
-      "todo": "one",
+      "todo": "react",
       "id": 4
     },
     {
-      "todo": "hjj",
+      "todo": "scss",
       "id": 5
-    },
-    {
-      "todo": "64y64",
-      "id": 6
-    },
-    {
-      "todo": "12",
-      "id": 7
-    },
-    {
-      "todo": "23",
-      "id": 8
-    },
-    {
-      "todo": "34",
-      "id": 9
     }
   ]
 }

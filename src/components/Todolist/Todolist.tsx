@@ -7,7 +7,8 @@ import { initialStateTypes } from "../../state/Reducers/todoReducer";
 import { bindActionCreators } from "redux";
 import * as actionCreators from "../../state/Action-creators/todoAction";
 // import useInput from './../../custom-hooks/useInput';
-import { Container } from "../styled-components/styled-components";
+import { Container, Message } from "../styled-components/styled-components";
+import Loading from "../Loading/Loading";
 
 
 const Todolist = () => {
@@ -17,7 +18,7 @@ const Todolist = () => {
   const [displayError, setDisplayError] = useState(false);
   const [isDisable, setIsDisable] = useState(0);
 
-  const { allTodos}: initialStateTypes = useSelector(
+  const { allTodos, loading, error}: initialStateTypes = useSelector(
     (state: AppState) => state.GetAllTodos
   );
 
@@ -43,15 +44,15 @@ const Todolist = () => {
     if (inputValue.trim().length === 0) {
       setDisplayError(true);
     } else {
-      inputValue.trim() && addTodos({todo : inputValue}); 
       getAllTodos();              // This not right, just added there was one error in the reducer while adding the data 
+      inputValue.trim() && addTodos({todo : inputValue}); 
+     
       setDisplayError(false);
       setInputValue("");                   
       // resetInput()
       setDisplayMessage(true);
     }
   };
-
 
 
   useEffect(() => {
@@ -67,10 +68,11 @@ const Todolist = () => {
     getAllTodos();
   }, [])
 
-  return (
-    <div className={styles.todolist}>
-      {displayError && <h2 className={styles.error}>Please add a task</h2>}
-      {displayMessage && <h2 className={styles.message}>Task added successfully</h2>}
+  return ( 
+    <>
+    {error ? <Message error="error">{error}</Message> : <div className={styles.todolist}>
+      {displayError && <Message error="error">Please add a task</Message>}
+      {displayMessage && <Message success="success">Task added successfully</Message>}
       
       <h1 className={styles.todolist_title}>Todolist</h1>
 
@@ -90,13 +92,16 @@ const Todolist = () => {
           value={isDisable ? "Update" : "Add"}
         />
       </form>
-      <Container className={styles.todoContainer}>
-        {allTodos?.map((todo, index) => {
+      <Container grid="grid">
+        {loading ? <Loading /> : allTodos?.map((todo, index) => {
           const allProps = {todo, index, setInputValue, isDisable, setIsDisable}
           return <Todo key={index} {...allProps}/>;
         })}
       </Container>
-    </div>
+    </div>}
+        
+    </>
+
   );
 };
 

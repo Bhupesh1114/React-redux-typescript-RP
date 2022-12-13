@@ -11,7 +11,6 @@ import useInput from '../../custom-hooks/useInput';
 import { todoPropType } from '../../state/Reducers/todoReducer';
 
 
-
 type propType = {
     todo : todoPropType,
     index : number,
@@ -36,11 +35,10 @@ const {deleteTodos} = bindActionCreators(actionCreators, dispatch);
         <div>
           <Button disabled={isDisable === 0 ? false : true} onClick={() => id && handleEdit(todo, id)} className={styles.btn}><IoMdCreate /></Button>
           <Button disabled={isDisable === 0 ? false : true} onClick={()=> id && deleteTodos(id)} className={styles.btn}><AiFillDelete /></Button>
-          {isDisable ?  <Button disabled={isDisable === 0 ? false : true} className={styles.btn}><IoMdOpen /></Button> : <Link to={`${id} && /${id}`}>
+          {isDisable ?  <Button disabled={isDisable === 0 ? false : true} className={styles.btn}><IoMdOpen /></Button> : <Link to={`${id}`}>
           <Button disabled={isDisable === 0 ? false : true} className={styles.btn}><IoMdOpen /></Button>
           </Link>
          }
-          
         </div>
     </div>
   )

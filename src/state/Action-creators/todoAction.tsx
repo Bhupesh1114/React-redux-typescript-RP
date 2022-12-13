@@ -38,7 +38,7 @@ export const getAllTodos = () => (dispatch:Dispatch<actionType>) => {
 }
 
 
-export const addTodos = (data : todoPropType) => (dispatch: Dispatch<actionType>) => {
+export const addTodos = (data : todoPropType) => (dispatch: Dispatch<actionType>,getState:() => {GetAllTodos: {loading : boolean, allTodos : todoPropType[]}}) => {
     dispatch({type : TODO_ADD_REQUEST});
 
     axios.post("http://localhost:3000/allTodos", data)
@@ -46,10 +46,10 @@ export const addTodos = (data : todoPropType) => (dispatch: Dispatch<actionType>
       console.log(response);
       dispatch({ type: TODO_ADD_SUCCESS, payload : response.data });   
     })
-    .catch(function(error){
-      console.log(error);
-      dispatch({type : TODO_ADD_FAIL,  payload : error.message ? error.message : "Internal Server Error"});
-    })
+    // .catch(function(error){
+    //   console.log(error);
+    //   dispatch({type : TODO_ADD_FAIL,  payload : error.message ? error.message : "Internal Server Error"});
+    // })
 
   };
 
